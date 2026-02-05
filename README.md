@@ -32,7 +32,7 @@ See exactly what's sent: [devtime.sh#L67](https://github.com/dev-time-tracker/ti
 cd /path/to/your/project
 
 # 2. Download
-curl -O [https://dev-time.com/devtime.sh](https://github.com/dev-time-tracker/timetracker/blob/master/devtime.sh)
+curl -O https://github.com/dev-time-tracker/timetracker/blob/master/devtime.sh
 chmod +x devtime.sh
 
 # 3. Run
