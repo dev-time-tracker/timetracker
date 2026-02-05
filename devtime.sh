@@ -39,15 +39,10 @@ fi
 PROJECT=$(basename "$PROJECT_DIR")
 
 echo "Client ID: $CLIENT_ID"
-echo "Tracking: $PROJECT_DIR"
-echo "Project: $PROJECT"
-echo ""
-echo "Press Ctrl+C to stop"
-echo ""
 
 while true; do
-    # Check for files modified in last 30 seconds (2x interval as safety margin)
-    if find "$PROJECT_DIR" -type f -newermt "30 seconds ago" \
+    # Check for files modified in last 15 seconds
+    if find "$PROJECT_DIR" -type f -newermt "15 seconds ago" \
         -not -path '*/.git/*' \
         -not -path '*/node_modules/*' \
         -not -path '*/dist/*' \
