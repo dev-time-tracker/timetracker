@@ -67,6 +67,10 @@ cat > "$p" <<EOF
 </dict></plist>
 EOF
 launchctl unload "$p" 2>/dev/null; launchctl load "$p"
+
+# 3. Your client_id is created the first time devtime runs and is saved locally in ~/.devtime_id.
+# Since auto-start runs in the background (no terminal output), print it anytime with:
+cat ~/.devtime_id
 ```
 
 ### Linux (systemd)
@@ -89,6 +93,10 @@ Restart=always
 WantedBy=default.target
 EOF
 systemctl --user daemon-reload && systemctl --user enable --now devtime.service
+
+# 3. Your client_id is created the first time devtime runs and is saved locally in ~/.devtime_id.
+# Since auto-start runs in the background (no terminal output), print it anytime with:
+cat ~/.devtime_id
 ```
 
 ## Privacy
