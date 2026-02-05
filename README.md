@@ -32,7 +32,7 @@ See exactly what's sent: [devtime.sh#L67](https://github.com/dev-time-tracker/ti
 cd /path/to/your/project
 
 # 2. Download
-curl -O https://dev-time.com/devtime.sh
+curl -O [https://dev-time.com/devtime.sh](https://github.com/dev-time-tracker/timetracker/blob/master/devtime.sh)
 chmod +x devtime.sh
 
 # 3. Run
@@ -45,22 +45,6 @@ Visit: `https://dev-time.com/app?client_id=YOUR_CLIENT_ID`
 
 Your client ID is stored in `~/.devtime_id` and shown when the script starts.
 
-## Tracking multiple projects
-
-Simply run the script in each project directory (in separate terminal tabs/windows):
-
-```bash
-# Terminal 1
-cd ~/projects/project-a
-./devtime.sh
-
-# Terminal 2
-cd ~/projects/project-b
-./devtime.sh
-```
-
-All activity is tracked under the same client ID, so you'll see all your projects in one dashboard.
-
 ## Auto-start on login
 
 ### macOS (launchd)
@@ -70,6 +54,7 @@ To auto-track a specific project on login:
 ```bash
 # 1. cd to your project directory
 cd /path/to/your/project
+
 # 2. create launchd background service
 d="$PWD"; p=~/Library/LaunchAgents/com.devtime.plist
 mkdir -p ~/Library/LaunchAgents
@@ -84,8 +69,6 @@ EOF
 launchctl unload "$p" 2>/dev/null; launchctl load "$p"
 ```
 
-**Note:** Change `/path/to/your/project` to your actual project path.
-
 ### Linux (systemd)
 
 Create a systemd user service:
@@ -93,6 +76,7 @@ Create a systemd user service:
 ```bash
 # 1. cd to your project directory
 cd /path/to/your/project
+
 # 2. create systemd background service
 d="$PWD"
 mkdir -p ~/.config/systemd/user
